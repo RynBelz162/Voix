@@ -17,7 +17,13 @@ kotlin {
     }
 
     sourceSets {
-        val commonMain by getting
+        val commonMain by getting {
+            dependencies {
+                implementation("com.arkivanov.mvikotlin:mvikotlin:3.0.0-beta01")
+                implementation("com.arkivanov.mvikotlin:mvikotlin-extensions-coroutines:3.0.0-beta01")
+                implementation("com.arkivanov.decompose:decompose:0.5.1")
+            }
+        }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
