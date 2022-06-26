@@ -12,6 +12,8 @@
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		9492328C2856A644008461DF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9492328B2856A644008461DF /* LoginView.swift */; };
 		9492328F2857E597008461DF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9492328E2857E597008461DF /* Colors.xcassets */; };
+		94983C5C2868CC1F00F602E4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94983C5B2868CC1F00F602E4 /* RootView.swift */; };
+		94983C5F2868CDB000F602E4 /* ObservableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94983C5E2868CDB000F602E4 /* ObservableValue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +37,8 @@
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9492328B2856A644008461DF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9492328E2857E597008461DF /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		94983C5B2868CC1F00F602E4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		94983C5E2868CDB000F602E4 /* ObservableValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableValue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +80,8 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
-				949232912857E8B8008461DF /* Components */,
+				94983C5D2868CDA000F602E4 /* Utility */,
+				94983C5A2868CC0000F602E4 /* Root */,
 				9492328D2857E56E008461DF /* Styles */,
 				9492328A2856A632008461DF /* Login */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
@@ -110,11 +115,20 @@
 			path = Styles;
 			sourceTree = "<group>";
 		};
-		949232912857E8B8008461DF /* Components */ = {
+		94983C5A2868CC0000F602E4 /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				94983C5B2868CC1F00F602E4 /* RootView.swift */,
 			);
-			path = Components;
+			path = Root;
+			sourceTree = "<group>";
+		};
+		94983C5D2868CDA000F602E4 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				94983C5E2868CDB000F602E4 /* ObservableValue.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,7 +215,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd \"$SRCROOT/..\"\n./gradlew :shared:embedAndSignAppleFrameworkForXcode\n";
+			shellScript = "cd \"$SRCROOT/..\"\n./gradlew :Shared:embedAndSignAppleFrameworkForXcode\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -212,6 +226,8 @@
 			files = (
 				9492328C2856A644008461DF /* LoginView.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
+				94983C5F2868CDB000F602E4 /* ObservableValue.swift in Sources */,
+				94983C5C2868CC1F00F602E4 /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
