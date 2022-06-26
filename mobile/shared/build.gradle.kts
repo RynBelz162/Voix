@@ -1,6 +1,7 @@
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
+    id("kotlin-parcelize") // Apply the plugin for Android
 }
 
 kotlin {
@@ -17,11 +18,18 @@ kotlin {
     }
 
     sourceSets {
+        all {
+            languageSettings.optIn("kotlin.RequiresOptIn")
+        }
+
         val commonMain by getting {
             dependencies {
-                implementation("com.arkivanov.mvikotlin:mvikotlin:3.0.0-beta01")
-                implementation("com.arkivanov.mvikotlin:mvikotlin-extensions-coroutines:3.0.0-beta01")
-                implementation("com.arkivanov.decompose:decompose:0.5.1")
+                implementation("com.arkivanov.mvikotlin:mvikotlin:3.0.0-beta02")
+                implementation("com.arkivanov.mvikotlin:rx:3.0.0-beta02")
+                implementation("com.arkivanov.mvikotlin:mvikotlin-main:3.0.0-beta02")
+                implementation("com.arkivanov.mvikotlin:mvikotlin-extensions-coroutines:3.0.0-beta02")
+                implementation("com.arkivanov.decompose:decompose:0.6.0")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.2")
             }
         }
         val commonTest by getting {

@@ -18,13 +18,14 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
+import com.arkivanov.decompose.extensions.compose.jetpack.subscribeAsState
+import com.belzsoftware.voix.login.Login
 
 @Composable
-fun LoginScreen()
+fun LoginScreen(component: Login)
 {
-    var username by rememberSaveable { mutableStateOf("") }
+    val state by component.models.subscribeAsState()
 
-    var password by rememberSaveable { mutableStateOf("") }
     var passwordVisible by rememberSaveable { mutableStateOf(false) }
 
     Surface {
@@ -36,11 +37,11 @@ fun LoginScreen()
         ) {
 
             OutlinedTextField(
-                value = username,
+                value = state.username,
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(10.dp, 5.dp),
-                onValueChange = { username = it},
+                onValueChange = component::onUsernameChanged,
                 label = {
                     Text(text = "Username")
                 },
@@ -50,11 +51,11 @@ fun LoginScreen()
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
             )
             OutlinedTextField(
-                value = password,
+                value = state.password,
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(10.dp, 5.dp),
-                onValueChange = { password = it },
+                onValueChange = component::onPasswordChanged,
                 label = {
                     Text(text = "Password")
                 },
@@ -73,7 +74,7 @@ fun LoginScreen()
                 }
             )
             Button(
-                onClick = { },
+                onClick = component::onLogin,
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(10.dp, 5.dp),
