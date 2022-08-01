@@ -14,6 +14,10 @@
 		9492328F2857E597008461DF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9492328E2857E597008461DF /* Colors.xcassets */; };
 		94983C5C2868CC1F00F602E4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94983C5B2868CC1F00F602E4 /* RootView.swift */; };
 		94983C5F2868CDB000F602E4 /* ObservableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94983C5E2868CDB000F602E4 /* ObservableValue.swift */; };
+		94E76F5F289729B80019804C /* SimpleRouterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E76F5E289729B80019804C /* SimpleRouterState.swift */; };
+		94E76F61289729E40019804C /* MutableStateBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E76F60289729E40019804C /* MutableStateBuilder.swift */; };
+		94E76F6328974A3D0019804C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E76F6228974A3D0019804C /* ContentView.swift */; };
+		94E76F6528974A670019804C /* ComponentHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E76F6428974A670019804C /* ComponentHolder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +43,10 @@
 		9492328E2857E597008461DF /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		94983C5B2868CC1F00F602E4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		94983C5E2868CDB000F602E4 /* ObservableValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableValue.swift; sourceTree = "<group>"; };
+		94E76F5E289729B80019804C /* SimpleRouterState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleRouterState.swift; sourceTree = "<group>"; };
+		94E76F60289729E40019804C /* MutableStateBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableStateBuilder.swift; sourceTree = "<group>"; };
+		94E76F6228974A3D0019804C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		94E76F6428974A670019804C /* ComponentHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentHolder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +96,7 @@
 				7555FF8C242A565B00829871 /* Info.plist */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
+				94E76F6228974A3D0019804C /* ContentView.swift */,
 			);
 			path = iosApp;
 			sourceTree = "<group>";
@@ -127,6 +136,9 @@
 			isa = PBXGroup;
 			children = (
 				94983C5E2868CDB000F602E4 /* ObservableValue.swift */,
+				94E76F5E289729B80019804C /* SimpleRouterState.swift */,
+				94E76F60289729E40019804C /* MutableStateBuilder.swift */,
+				94E76F6428974A670019804C /* ComponentHolder.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -225,8 +237,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9492328C2856A644008461DF /* LoginView.swift in Sources */,
+				94E76F6528974A670019804C /* ComponentHolder.swift in Sources */,
+				94E76F5F289729B80019804C /* SimpleRouterState.swift in Sources */,
+				94E76F6328974A3D0019804C /* ContentView.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				94983C5F2868CDB000F602E4 /* ObservableValue.swift in Sources */,
+				94E76F61289729E40019804C /* MutableStateBuilder.swift in Sources */,
 				94983C5C2868CC1F00F602E4 /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

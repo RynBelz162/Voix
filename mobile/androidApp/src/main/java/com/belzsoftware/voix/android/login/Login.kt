@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.dp
 import com.arkivanov.decompose.extensions.compose.jetpack.subscribeAsState
 import com.belzsoftware.voix.login.Login
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LoginScreen(component: Login)
 {

@@ -7,20 +7,34 @@
 //
 
 import SwiftUI
+import Shared
 
 
 struct LoginView: View {
+    private var component: Login
     
-    @State private var username: String = ""
-    @State private var password: String = ""
+    @ObservedObject
+    private var models: ObservableValue<LoginModel>
+    
     @State private var isSecured: Bool = true
     
+    init(_ component: Login) {
+        self.component = component
+        self.models = ObservableValue(component.models)
+    }
+    
+    
     var body: some View {
+        let model = models.value
+        
+        let usernameBinding = Binding(get: { model.username }, set: component.onUsernameChanged)
+        let passwordBinding = Binding(get: { model.password }, set: component.onPasswordChanged)
+        
         VStack(spacing: 10) {
             
             HStack {
                 Image(systemName: "person")
-                TextField("Username", text: $username)
+                TextField("Username", text: usernameBinding)
             }
             .padding(10)
             .overlay(RoundedRectangle(cornerRadius: 10)
@@ -29,9 +43,9 @@ struct LoginView: View {
             HStack {
                 Image(systemName: "lock")
                 if isSecured {
-                    SecureField("Password", text: $password)
+                    SecureField("Password", text: passwordBinding)
                 } else {
-                    TextField("Password", text: $password)
+                    TextField("Password", text: passwordBinding)
                 }
                 Button(action: { isSecured.toggle() }) {
                     Image(systemName: self.isSecured ? "eye.slash" : "eye")
@@ -55,6 +69,24 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(StubLogin())
+    }
+    
+    class StubLogin: Login {
+        func onLogin() {
+        }
+        
+        func onPasswordChanged(password: String) {
+        }
+        
+        func onUsernameChanged(username: String) {
+        }
+        
+        let models: Value<LoginModel> =
+            valueOf(
+                LoginModel(
+                    username: "test@test.com", password: "password123"
+                )
+            )
     }
 }
