@@ -10,8 +10,19 @@ import SwiftUI
 import Shared
 
 struct ContentView: View {
+    @State
+    private var componentHolder =
+        ComponentHolder {
+            RootComponent(
+                componentContext: $0,
+                storeFactory: DefaultStoreFactory()
+            )
+        }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        RootView(componentHolder.component)
+                .onAppear { LifecycleRegistryExtKt.resume(self.componentHolder.lifecycle) }
+                .onDisappear { LifecycleRegistryExtKt.stop(self.componentHolder.lifecycle) }
     }
 }
 

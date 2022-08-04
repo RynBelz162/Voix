@@ -17,6 +17,7 @@ kotlin {
             baseName = "Shared"
             export("com.arkivanov.decompose:decompose:0.6.0")
             export("com.arkivanov.essenty:lifecycle:0.4.2")
+            export("com.arkivanov.mvikotlin:mvikotlin-main:3.0.0-beta02")
         }
     }
 

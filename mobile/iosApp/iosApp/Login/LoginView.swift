@@ -56,7 +56,7 @@ struct LoginView: View {
             .overlay(RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color("Primary"), style: StrokeStyle(lineWidth: 1.0)))
             
-            Button("Login", action: {})
+            Button("Login", action: component.onLogin)
             	.frame(minWidth: 0, maxWidth: .infinity)
             	.padding(10)
             	.foregroundColor(.white)
