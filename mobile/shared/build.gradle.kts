@@ -16,7 +16,7 @@ kotlin {
         it.binaries.framework {
             baseName = "Shared"
             export("com.arkivanov.decompose:decompose:0.6.0")
-            export("com.arkivanov.essenty:lifecycle:0.4.2")
+            export("com.arkivanov.essenty:lifecycle:0.4.1")
             export("com.arkivanov.mvikotlin:mvikotlin-main:3.0.0-beta02")
         }
     }
@@ -33,8 +33,9 @@ kotlin {
                 implementation("com.arkivanov.mvikotlin:mvikotlin-main:3.0.0-beta02")
                 implementation("com.arkivanov.mvikotlin:mvikotlin-extensions-coroutines:3.0.0-beta02")
                 implementation("com.arkivanov.decompose:decompose:0.6.0")
-                implementation("com.arkivanov.essenty:lifecycle:0.4.2")
+                implementation("com.arkivanov.essenty:lifecycle:0.4.1")
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.2")
+                implementation("io.github.aakira:napier:2.6.1")
             }
         }
 
@@ -52,7 +53,8 @@ kotlin {
                 api("com.arkivanov.mvikotlin:mvikotlin-extensions-coroutines:3.0.0-beta02")
                 api("com.arkivanov.decompose:decompose:0.6.0")
                 api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.2")
-                api("com.arkivanov.essenty:lifecycle:0.4.2")
+                api("com.arkivanov.essenty:lifecycle:0.4.1")
+                api("io.github.aakira:napier:2.6.1")
             }
         }
     }

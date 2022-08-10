@@ -4,6 +4,7 @@ import com.arkivanov.mvikotlin.core.store.Store
 import com.arkivanov.mvikotlin.core.store.StoreFactory
 import com.arkivanov.mvikotlin.core.utils.ExperimentalMviKotlinApi
 import com.arkivanov.mvikotlin.extensions.coroutines.coroutineExecutorFactory
+import io.github.aakira.napier.Napier
 
 internal sealed interface Intent {
     data class UpdateUsername(val username: String): Intent
@@ -49,5 +50,6 @@ private fun logIn(username: String, password:String) : String {
     // Authenticate the user
     // this is probably going to take a while
     // this will also return a auth token
+    Napier.i("called log in $username, $password")
     return "AuthToken"
 }

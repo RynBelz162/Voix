@@ -10,6 +10,7 @@ import com.arkivanov.decompose.extensions.compose.jetpack.Children
 import com.arkivanov.mvikotlin.main.store.DefaultStoreFactory
 import com.belzsoftware.voix.android.login.LoginScreen
 import com.belzsoftware.voix.android.styling.AppTheme
+import com.belzsoftware.voix.config.Voix
 import com.belzsoftware.voix.root.Root
 import com.belzsoftware.voix.root.RootComponent
 
@@ -17,6 +18,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        Voix.initNapierDebug();
         val root = createRootComponent(defaultComponentContext())
 
         setContent {
